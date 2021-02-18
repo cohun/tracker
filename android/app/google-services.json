@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "869153443803",
+    "project_id": "tracker-76cf5",
+    "storage_bucket": "tracker-76cf5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:869153443803:android:d6f1cf730710b564e7e1fe",
+        "android_client_info": {
+          "package_name": "hu.hitb.tracker_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "869153443803-n8k1cnr228hpi8uftsdd86dtrhht0me1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "hu.hitb.tracker_app",
+            "certificate_hash": "fce3f5d04d07b82dc8bc205390769e3fd5766bf8"
+          }
+        },
+        {
+          "client_id": "869153443803-fq43tp9nntg5dju8u8rc2fb3j7u7ks1i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD87Uc9HvhWw_k9a6EQU_dPYc4MxPHQ3zQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "869153443803-fq43tp9nntg5dju8u8rc2fb3j7u7ks1i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
