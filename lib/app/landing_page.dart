@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tracker_app/app/home_page.dart';
-import 'package:tracker_app/app/sign_in/sign:in_page.dart';
+import 'package:tracker_app/app/sign_in/sign_in_page.dart';
 import 'package:tracker_app/services/auth.dart';
 
 class LandingPage extends StatelessWidget {
