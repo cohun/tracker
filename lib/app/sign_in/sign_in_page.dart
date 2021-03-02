@@ -1,36 +1,45 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:provider/provider.dart';
 import 'package:tracker_app/app/sign_in/email_sign_in_page.dart';
 import 'package:tracker_app/app/sign_in/sign_in_button.dart';
 import 'package:tracker_app/app/sign_in/social_sign_in_button.dart';
-import 'package:tracker_app/services/auth_provider.dart';
+import 'package:tracker_app/common_widgets/firebase_auth_exception_alert_dialog.dart';
+import 'package:tracker_app/services/auth.dart';
 
 class SignInPage extends StatelessWidget {
+  void _showSignInError(BuildContext context, FirebaseAuthException exception) {
+    FirebaseAuthExceptionAlertDialog(
+      title: 'Sign in failed',
+      exception: exception,
+    ).show(context);
+  }
 
   Future<void> _signInAnonymously(BuildContext context) async {
     try {
-      final auth = AuthProvider.of(context);
+      final auth = Provider.of<AuthBase>(context, listen: false);
       await auth.signInAnonymously();
-    } catch (e) {
-      print(e.toString());
+    } on FirebaseAuthException catch (e) {
+      _showSignInError(context, e);
     }
   }
 
   Future<void> _signInWithGoogle(BuildContext context) async {
     try {
-      final auth = AuthProvider.of(context);
+      final auth = Provider.of<AuthBase>(context, listen: false);
       await auth.signInWithGoogle();
-    } catch (e) {
-      print(e.toString());
+    } on FirebaseAuthException catch (e) {
+      _showSignInError(context, e);
     }
   }
 
   Future<void> _signInWithFacebook(BuildContext context) async {
     try {
-      final auth = AuthProvider.of(context);
+      final auth = Provider.of<AuthBase>(context, listen: false);
       await auth.signInWithFacebook();
-    } catch (e) {
-      print(e.toString());
+    } on FirebaseAuthException catch (e) {
+      _showSignInError(context, e);
     }
   }
 

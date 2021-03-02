@@ -1,8 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:tracker_app/app/landing_page.dart';
 import 'package:tracker_app/services/auth.dart';
-import 'package:tracker_app/services/auth_provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,8 +25,8 @@ class MyApp extends StatelessWidget {
 
         // Once complete, show your application
         if (snapshot.connectionState == ConnectionState.done) {
-          return AuthProvider(
-            auth: Auth(),
+          return Provider<AuthBase>(
+            create: (context) => Auth(),
             child: MaterialApp(
               title: 'Time Tracker',
               theme: ThemeData.dark(),
@@ -41,4 +41,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
