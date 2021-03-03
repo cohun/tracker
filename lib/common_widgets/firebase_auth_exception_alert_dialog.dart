@@ -4,7 +4,7 @@ import 'package:tracker_app/common_widgets/platform_alert_dialog.dart';
 
 class FirebaseAuthExceptionAlertDialog extends PlatformAlertDialog {
   FirebaseAuthExceptionAlertDialog(
-      {@required String title, @required FirebaseAuthException exception})
+      {@required String title, @required FirebaseException exception})
       : super(
           title: title,
           content: _message(exception),
