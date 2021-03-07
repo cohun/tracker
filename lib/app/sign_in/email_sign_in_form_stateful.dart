@@ -7,14 +7,16 @@ import 'package:tracker_app/common_widgets/firebase_auth_exception_alert_dialog.
 import 'package:tracker_app/common_widgets/form_submit_button.dart';
 import 'package:tracker_app/services/auth.dart';
 
-enum EmailSignInFormType { signIn, register }
+import 'email_sign_in_model.dart';
 
-class EmailSignInForm extends StatefulWidget with EmailAndPasswordValidator {
+class EmailSignInFormStateful extends StatefulWidget
+    with EmailAndPasswordValidator {
   @override
-  _EmailSignInFormState createState() => _EmailSignInFormState();
+  _EmailSignInFormStatefulState createState() =>
+      _EmailSignInFormStatefulState();
 }
 
-class _EmailSignInFormState extends State<EmailSignInForm> {
+class _EmailSignInFormStatefulState extends State<EmailSignInFormStateful> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final FocusNode _emailFocusNode = FocusNode();
@@ -36,7 +38,7 @@ class _EmailSignInFormState extends State<EmailSignInForm> {
     super.dispose();
   }
 
-  _submit() async {
+  Future<void> _submit() async {
     setState(() {
       _submitted = true;
       _isLoading = true;
@@ -103,7 +105,7 @@ class _EmailSignInFormState extends State<EmailSignInForm> {
         onPressed: submitEnabled ? _submit : null,
         text: primaryText,
       ),
-      FlatButton(
+      TextButton(
         onPressed: !_isLoading ? _toggleFormType : null,
         child: Text(secondaryText),
       ),
