@@ -84,7 +84,7 @@ class PlatformAlertDialogAction extends PlatformWidget {
 
   @override
   Widget buildMaterialWidget(BuildContext context) {
-    return FlatButton(
+    return TextButton(
       onPressed: onPressed,
       child: child,
     );
