@@ -31,7 +31,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('HomePage'),
         actions: [
-          FlatButton(
+          TextButton(
             onPressed: () => _confirmSignOut(context),
             child: Text(
               'Logout',
