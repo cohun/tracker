@@ -5,19 +5,19 @@ import 'package:flutter/cupertino.dart';
 import 'package:tracker_app/common_widgets/platform_widget.dart';
 
 class PlatformAlertDialog extends PlatformWidget {
-  PlatformAlertDialog(
-      {this.cancelActionText,
-      @required this.title,
-      @required this.content,
-      @required this.defaultActionText})
-      : assert(title != null),
+  PlatformAlertDialog({
+    this.cancelActionText,
+    @required this.title,
+    @required this.content,
+    @required this.defaultActionText,
+  })  : assert(title != null),
         assert(content != null),
         assert(defaultActionText != null);
 
-  final title;
-  final content;
-  final cancelActionText;
-  final defaultActionText;
+  final String title;
+  final String content;
+  final String cancelActionText;
+  final String defaultActionText;
 
   Future<bool> show(BuildContext context) async {
     return Platform.isIOS

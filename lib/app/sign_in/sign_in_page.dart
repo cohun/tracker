@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:tracker_app/app/sign_in/email_sign_in_page.dart';
@@ -53,6 +54,8 @@ class SignInPage extends StatelessWidget {
       await manager.signInWithGoogle();
     } on FirebaseAuthException catch (e) {
       _showSignInError(context, e);
+    } on PlatformException catch (f) {
+      print('Platform exception occoured ${f.message}');
     }
   }
 
