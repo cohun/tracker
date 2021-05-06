@@ -23,27 +23,17 @@ class CustomRaisedButton extends StatelessWidget {
     return SizedBox(
       height: buttonHeight,
       child: ElevatedButton(
+        onPressed: onPressed,
         child: child,
         style: ElevatedButton.styleFrom(
           primary: buttonColor,
-          onSurface: textColor,
-          minimumSize: Size(88, 36),
-          padding: EdgeInsets.symmetric(horizontal: 16),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
               Radius.circular(borderRadius),
             ),
           ),
+          textStyle: TextStyle(color: textColor),
         ),
-        // color: buttonColor,
-        // disabledColor: buttonColor,
-        // textColor: textColor,
-        // shape: RoundedRectangleBorder(
-        //   borderRadius: BorderRadius.all(
-        //     Radius.circular(borderRadius),
-        //   ),
-        // ),
-        onPressed: onPressed,
       ),
     );
   }
