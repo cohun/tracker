@@ -40,5 +40,10 @@ app.*.symbols
 # Obfuscation related
 app.*.map.json
 
+<<<<<<< HEAD
 # Added by ne
 /sitehtml/all-todos.html
+=======
+# changes created by me
+lib/*/*.html
+>>>>>>> 8d56e300a60086d7df26d194a54f861c4240748b

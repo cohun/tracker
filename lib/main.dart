@@ -8,6 +8,7 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
+// change for trying Git
 
 class MyApp extends StatelessWidget {
   final Future<FirebaseApp> _initialization = Firebase.initializeApp();
